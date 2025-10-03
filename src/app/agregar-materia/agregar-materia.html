@@ -3,18 +3,19 @@
         <h3>Agregar Materia/Proyecto</h3>
     </div>
 
-    <form>
+    <div class="form-container" style="max-width: 400px; margin: auto;">
+    <form (ngSubmit)="onSubmit()">
         <div class="mb-3">
             <label for="materia" class="form-label">Materia</label>
-            <input type="text" class="form-control" id="materia">
+            <input type="text" class="form-control" id="materia" name="materia" [(ngModel)]="materia.materia">
         </div>
         <div class="mb-3">
             <label for="proyecto" class="form-label">Proyecto</label>
-            <input type="txt" class="form-control" id="proyecto">
+            <input type="txt" class="form-control" id="proyecto" name="proyecto" [(ngModel)]="materia.proyecto">
         </div>
         <div class="mb-3">
             <label for="miembros" class="form-label">Cantidad de Miembros</label>
-            <input type="number" class="form-control" id="miembros">
+            <input type="number" class="form-control" id="miembros" name="miembros" [(ngModel)]="materia.miembros">
         </div>
 
         <div class="text-center">
@@ -22,4 +23,7 @@
         <a href="/" class="btn btn-primary btn-sm">Regresar</a>
         </div>
     </form>
+    </div>
+
+
 </div>

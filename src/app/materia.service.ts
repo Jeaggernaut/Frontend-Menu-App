@@ -15,4 +15,8 @@ export class MateriaService {
     return this.clienteHttp.get<Materia[]>(this.urlBase);
   }
 
+  agregarMateria(materia: Materia): Observable<Object>{
+    return this.clienteHttp.post(this.urlBase, materia);
+  }
+
 }
