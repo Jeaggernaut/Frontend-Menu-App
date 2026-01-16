@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Materia } from '../materia';
 import { MateriaService } from '../materia.service';
 import { inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-materia-lista',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './materia-lista.html'
   //styleUrl: './materia-lista.css'
 })
@@ -22,6 +23,7 @@ export class MateriaLista {
     this.MateriaServicio.obtenerMateriasLista().subscribe(
       {
         next: (datos) => {
+          console.log('Materias obtenidas:', datos);
           this.materias = datos;
         },
         error: (error) => {
